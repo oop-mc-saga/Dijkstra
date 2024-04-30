@@ -1,5 +1,7 @@
 package graph;
 
+import java.util.Objects;
+
 /**
  * 頂点のクラス：始点からの距離で他の頂点と比較できる
  *
@@ -30,7 +32,11 @@ public class Node implements Comparable<Node> {
      */
     @Override
     public int compareTo(Node o) {
-        return (int) Math.signum(this.distance - o.distance);
+        int v = (int) Math.signum(this.distance - o.distance);
+        if (v == 0) {
+            return label.compareTo(o.label);
+        }
+        return v;
     }
 
     @Override

@@ -58,14 +58,26 @@ public class BinaryHeap<T extends Comparable<T>> {
         return (list.size() <= 1);
     }
 
+    /**
+     * Confirm whether this binary heap contains the object t
+     * 
+     * @param t
+     * @return
+     */
     public boolean contains(T t){
         return list.contains(t);
     }
-    
+
+    /**
+     * reduce the value of the object t
+     * 
+     * @param t
+     */
     public void reduceValue(T t){
-        int k = list.indexOf(t);
-        shiftDown(k);
+        int k = list.indexOf(t);// the position of the object
+        shiftDown(k);// shift down the object
     }
+    
     /**
      * shift up the object at k-th position
      * 
